@@ -1,3 +1,5 @@
 .idea
 node_modules
 *.iml
+npm-debug.log
+output.js

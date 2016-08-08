@@ -3,5 +3,11 @@
   "version": "0.0.1",
   "dependencies": {
     "stylefmt": "^4.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.1"
+  },
+  "scripts": {
+    "test": "(cd tests/example && cp ../original/test.scss . && npm i && webpack --config webpack.config.js) && mocha --ui tdd tests/loader.js"
   }
 }
