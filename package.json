@@ -1,0 +1,7 @@
+{
+  "name": "stylefmt-loader",
+  "version": "0.0.1",
+  "dependencies": {
+    "stylefmt": "^4.2.3"
+  }
+}
