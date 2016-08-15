@@ -16,31 +16,31 @@ It fixes stylelint issues automatically while bundling with Webpack.
 ### Inline
 
 ```
-    require("css!postcss!stylefmt!./file.css");
-    //or
-    require("css!sass!stylefmt!./file.scss");
-    //or any other preproccesor
+require("css!postcss!stylefmt!./file.css");
+//or
+require("css!sass!stylefmt!./file.scss");
+//or any other preproccesor
 
 ```
 
 ### In webpack.config.js
 
 ```
-  module: {
-    loaders: [
-      {test: /\.css/, loader: "css!postcss!stylefmt"}
-    ]
-  }
+module: {
+	loaders: [
+		{test: /\.css/, loader: "css!postcss!stylefmt"}
+		]
+	}
 ```
 
 You can also specify your stylelint for stylefmt to use:
 
 ```
-  module: {
-    loaders: [
-      {test: /\.css/, loader: "css!postcss!stylefmt?config=.stylelintrc"}
-    ]
-  }
+module: {
+		loaders: [
+			{test: /\.css/, loader: "css!postcss!stylefmt?config=.stylelintrc"}
+		]
+	}
 ```
 
 ## Want to help?
