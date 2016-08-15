@@ -15,7 +15,7 @@ It fixes stylelint issues automatically while bundling with Webpack.
 
 ### Inline
 
-```
+```javascript
 require("css!postcss!stylefmt!./file.css");
 //or
 require("css!sass!stylefmt!./file.scss");
@@ -25,7 +25,7 @@ require("css!sass!stylefmt!./file.scss");
 
 ### In webpack.config.js
 
-```
+```json
 module: {
 	loaders: [
 		{test: /\.css/, loader: "css!postcss!stylefmt"}
@@ -35,12 +35,87 @@ module: {
 
 You can also specify your stylelint for stylefmt to use:
 
-```
+```json
 module: {
 		loaders: [
 			{test: /\.css/, loader: "css!postcss!stylefmt?config=.stylelintrc"}
 		]
 	}
+```
+
+**Your css before running webpack**
+
+```css
+// mixin for clearfix
+
+
+@mixin      clearfix    ()      { &:before,
+&:after {
+     content:" ";
+     display              : table;  }
+
+&:after        {clear: both;}
+}.class
+ {
+     padding:10px;@include        clearfix();}
+.base {  color: red;  }
+
+// placeholder
+%base
+ {
+
+
+     padding: 12px
+ }
+
+.foo{
+@extend      .base;}
+
+.bar
+{     @extend            %base;
+
+}
+```
+
+**Your css after running webpack**
+
+```css
+// mixin for clearfix
+
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.class {
+	padding: 10px;
+	@include clearfix();
+}
+
+.base {
+	color: red;
+}
+
+// placeholder
+%base {
+	padding: 12px;
+}
+
+.foo {
+	@extend .base;
+}
+
+.bar {
+	@extend %base;
+}
 ```
 
 ## Want to help?
