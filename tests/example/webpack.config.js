@@ -7,7 +7,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.scss$/, loader: "css!sass!stylefmt"}
+      {test: /\.scss$/, loader: "css!sass!stylefmt?config=.stylelintrc"}
     ]
   }
 };

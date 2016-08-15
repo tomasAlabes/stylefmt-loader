@@ -2,6 +2,9 @@
   "name": "stylefmt-loader",
   "version": "0.0.1",
   "dependencies": {
+    "loader-utils": "^0.2.15",
+    "postcss": "^5.1.2",
+    "postcss-scss": "^0.1.9",
     "stylefmt": "^4.2.3"
   },
   "devDependencies": {

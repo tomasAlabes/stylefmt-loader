@@ -2,7 +2,7 @@
   "name": "stylefmt-loader-example",
   "version": "0.0.1",
   "dependencies": {
-    "stylefmt-loader": "file:../"
+    "stylefmt-loader": "file:../../"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",

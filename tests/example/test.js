@@ -1,4 +1,4 @@
 
-import './test.scss';
+require('./test.scss');
 
 console.log('i\'m here');

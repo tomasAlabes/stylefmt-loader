@@ -1,14 +1,26 @@
-var stylefmt = require('stylefmt');
-var fs = require('fs');
+const stylefmt = require('stylefmt');
+const postcss = require('postcss');
+const scss = require('postcss-scss');
+const loaderUtils = require("loader-utils");
 
-module.exports = function(source) {
+const fs = require('fs');
+
+module.exports = function (source) {
   
-  var callback = this.async();
+  let callback = this.async();
+  let resourcePath = this.resourcePath;
+  let query = loaderUtils.parseQuery(this.query);
   
-  stylefmt.process(source).then((result) => {
-    
-    fs.writeFile(this.resourcePath, result.css, () => callback(null, result.css));
-    
-  }).catch((e) => { throw new Error(e); });
+  postcss([stylefmt({
+    config: `${process.cwd()}/${query.config}`
+  })])
+    .process(source, {syntax: scss})
+    .then(function (result) {
+      
+      fs.writeFile(resourcePath, result.css, () => callback(null, result.css));
+      
+    }).catch((e) => {
+    throw new Error(e);
+  });
   
 };
