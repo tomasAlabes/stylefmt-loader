@@ -25,27 +25,27 @@ require("css!sass!stylefmt!./file.scss");
 
 ### In webpack.config.js
 
-```json
-module: {
-	loaders: [
-		{test: /\.css/, loader: "css!postcss!stylefmt"}
+```javascript
+"module": {
+	"loaders": [
+		{"test": /\.css/, "loader": "css!postcss!stylefmt"}
 		]
 	}
 ```
 
 You can also specify your stylelint for stylefmt to use:
 
-```json
-module: {
-		loaders: [
-			{test: /\.css/, loader: "css!postcss!stylefmt?config=.stylelintrc"}
+```javascript
+"module": {
+		"loaders": [
+			{"test": /\.css/, "loader": "css!postcss!stylefmt?config=.stylelintrc"}
 		]
 	}
 ```
 
 **Your css before running webpack**
 
-```css
+```scss
 // mixin for clearfix
 
 
@@ -79,7 +79,7 @@ module: {
 
 **Your css after running webpack**
 
-```css
+```scss
 // mixin for clearfix
 
 
