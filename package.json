@@ -1,6 +1,11 @@
 {
   "name": "stylefmt-loader",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Fixes stylelint issues automatically while bundling with Webpack",
+  "author": {
+    "name": "Tomas Alabes"
+  },
+  "main": "stylefmt-loader.js",
   "dependencies": {
     "loader-utils": "^0.2.15",
     "postcss": "^5.1.2",
@@ -12,5 +17,20 @@
   },
   "scripts": {
     "test": "(cd tests/example && cp ../original/test.scss . && npm i && webpack --config webpack.config.js) && mocha --ui tdd tests/loader.js"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "webpack-loader",
+    "stylefmt",
+    "stylelint"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/tomasAlabes/stylefmt-loader",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomasAlabes/stylefmt-loader/issues"
   }
 }
