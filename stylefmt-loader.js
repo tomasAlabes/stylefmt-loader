@@ -1,3 +1,5 @@
+"use strict";
+
 const stylefmt = require('stylefmt');
 const postcss = require('postcss');
 const scss = require('postcss-scss');
