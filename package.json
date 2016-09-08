@@ -16,7 +16,7 @@
     "mocha": "^3.0.1"
   },
   "scripts": {
-    "test": "(cd tests/example && cp ../original/test.scss . && npm i && webpack --config webpack.config.js) && mocha --ui tdd tests/loader.js"
+    "test": "(cd tests/example && cp ../original/test.scss . && rm -rf ./node_modules/stylefmt-loader && npm i && webpack --config webpack.config.js) && ./node_modules/mocha/bin/mocha --ui tdd tests/loader.js"
   },
   "keywords": [
     "webpack",
