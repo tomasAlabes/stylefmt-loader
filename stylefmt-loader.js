@@ -14,7 +14,7 @@ module.exports = function (source) {
   let query = loaderUtils.parseQuery(this.query);
   
   postcss([stylefmt({
-    config: `${process.cwd()}/${query.config}`
+    configFile: `${process.cwd()}/${query.config}`
   })])
     .process(source, {syntax: scss})
     .then(function (result) {
