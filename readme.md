@@ -38,7 +38,13 @@ You can also specify your stylelint for stylefmt to use:
 ```javascript
 "module": {
 		"loaders": [
-			{"test": /\.css/, "loader": "css!postcss!stylefmt?config=.stylelintrc"}
+			{
+                  test: /\.css/,
+                  loader: 'stylefmt-loader',
+                  query: {
+                    config: '.stylelintrc'
+                  }
+                }
 		]
 	}
 ```
