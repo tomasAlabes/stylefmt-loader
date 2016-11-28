@@ -1,6 +1,6 @@
 {
   "name": "stylefmt-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Fixes stylelint issues automatically while bundling with Webpack",
   "author": {
     "name": "Tomas Alabes"
@@ -10,7 +10,7 @@
     "loader-utils": "0.2.16",
     "postcss-scss": "0.3.1"
   },
-  "peerDependencies":{
+  "peerDependencies": {
     "stylefmt": "5.x",
     "postcss": "5.x"
   },
