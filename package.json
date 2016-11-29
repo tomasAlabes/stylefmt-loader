@@ -17,6 +17,7 @@
   "devDependencies": {
     "mocha": "3.1.2",
     "stylefmt": "^5.0.1",
+    "stylelint-config-standard": "^15.0.0",
     "webpack": "^2.1.0-beta.27"
   },
   "scripts": {
