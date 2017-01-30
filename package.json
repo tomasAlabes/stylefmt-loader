@@ -22,7 +22,7 @@
     "webpack": "2.2.0"
   },
   "scripts": {
-    "test": "(cd tests/example && cp ../original/test.scss . && rm -rf ./node_modules/stylefmt-loader && npm i && ../../node_modules/webpack/bin/webpack.js --config webpack.config.js) && ./node_modules/mocha/bin/mocha --ui tdd tests/loader.js"
+    "test": "chmod +x ./tests/runTests.sh && ./tests/runTests.sh"
   },
   "keywords": [
     "webpack",

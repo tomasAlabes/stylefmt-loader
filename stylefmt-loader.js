@@ -12,10 +12,19 @@ module.exports = function (source) {
   let callback = this.async();
   let resourcePath = this.resourcePath;
   let query = loaderUtils.parseQuery(this.query);
+  let stylefmtConf;
   
-  postcss([stylefmt({
-    configFile: `${process.cwd()}/${query.config}`
-  })])
+  if (query.config) {
+    stylefmtConf = stylefmt({
+      configFile: `${process.cwd()}/${query.config}`
+    })
+  } else {
+    stylefmtConf = stylefmt();
+  }
+  
+  postcss([
+    stylefmtConf
+  ])
     .process(source, {syntax: scss})
     .then(function (result) {
       
