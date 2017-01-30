@@ -26,27 +26,40 @@ require("css!sass!stylefmt!./file.scss");
 ### In webpack.config.js
 
 ```javascript
-"module": {
-	"loaders": [
-		{"test": /\.css/, "loader": "css!postcss!stylefmt"}
-		]
-	}
+module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          "css-loader",
+          "sass-loader",
+          "stylefmt-loader"
+        ]
+      }
+    ]
+  }
 ```
 
 You can also specify your stylelint for stylefmt to use:
 
 ```javascript
-"module": {
-		"loaders": [
-			{
-                  test: /\.css/,
-                  loader: 'stylefmt-loader',
-                  query: {
-                    config: '.stylelintrc'
-                  }
-                }
-		]
-	}
+module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "stylefmt-loader",
+            options: {
+              config: ".stylelintrc"
+            }
+          }
+        ]
+      }
+    ]
+  }
 ```
 
 **Your css before running webpack**

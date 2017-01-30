@@ -4,8 +4,20 @@ module.exports = {
     filename: "output.js"
   },
   module: {
-    loaders: [
-      {test: /\.scss$/, loader: "css-loader!sass-loader!stylefmt-loader?config=.stylelintrc"}
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "stylefmt-loader",
+            options: {
+              config: ".stylelintrc"
+            }
+          }
+        ]
+      }
     ]
   }
 };
