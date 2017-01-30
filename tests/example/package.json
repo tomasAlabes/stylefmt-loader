@@ -5,9 +5,9 @@
     "stylefmt-loader": "file:../../"
   },
   "devDependencies": {
-    "postcss-loader": "^0.10.0",
-    "css-loader": "^0.23.1",
-    "node-sass": "^3.8.0",
-    "sass-loader": "^4.0.0"
+    "css-loader": "0.26.1",
+    "node-sass": "4.4.0",
+    "postcss-loader": "1.2.2",
+    "sass-loader": "4.1.1"
   }
 }
