@@ -3,7 +3,9 @@
 ## Installation
 
 `npm install --save-dev stylefmt stylefmt-loader`
+
 or
+
 `yarn add --dev stylefmt stylefmt-loader`
 
 ## Short Description
