@@ -2,7 +2,7 @@
 
 ## Installation
 
-`npm install --save stylefmt-loader`
+`npm install --save-dev stylefmt stylefmt-loader`
 
 ## Short Description
 
