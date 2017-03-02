@@ -8,12 +8,12 @@ const loaderUtils = require("loader-utils");
 const fs = require('fs');
 
 module.exports = function (source) {
-  
+
   let callback = this.async();
   let resourcePath = this.resourcePath;
   let query = loaderUtils.parseQuery(this.query);
   let stylefmtConf;
-  
+
   if (query.config) {
     stylefmtConf = stylefmt({
       configFile: `${process.cwd()}/${query.config}`
@@ -21,17 +21,18 @@ module.exports = function (source) {
   } else {
     stylefmtConf = stylefmt();
   }
-  
+
   postcss([
     stylefmtConf
   ])
-    .process(source, {syntax: scss})
+    .process(source, { syntax: scss })
     .then(function (result) {
-      
-      fs.writeFile(resourcePath, result.css, () => callback(null, result.css));
-      
+      if (source !== result.css) {
+        fs.writeFileSync(resourcePath, result.css);
+      }
+      callback(null, result.css);
     }).catch((e) => {
-    throw new Error(e);
-  });
-  
+      throw new Error(e);
+    });
+
 };
