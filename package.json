@@ -1,6 +1,6 @@
 {
   "name": "stylefmt-loader",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Fixes stylelint issues automatically while bundling with Webpack",
   "author": {
     "name": "Tomas Alabes"
